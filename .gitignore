@@ -174,4 +174,4 @@ cython_debug/
 notes.md
 
 # Ignore src until it's ready
-src/
+src/model.py
