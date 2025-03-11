@@ -11,14 +11,16 @@ def vomitoxin_distribution(df, target):
     plt.show()
 
 
-def plot_predicted_vs_actual(y_test, y_pred, model_name):
-    plt.figure(figsize=(6,6))
-    plt.scatter(y_test, y_pred, alpha=0.7, label=model_name)
-    plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red', linestyle='--')
-    plt.xlabel("Actual vomitoxin_ppb (Scaled)")
-    plt.ylabel("Predicted vomitoxin_ppb (Scaled)")
-    plt.title(f"{model_name} - Actual vs. Predicted")
+def plot_actual_vs_predicted(y_true, y_pred, model_name):
+    plt.figure(figsize=(8,6))
+    plt.scatter(y_true, y_pred, alpha=0.5, label='Predictions')
+    plt.plot([min(y_true), max(y_true)], [min(y_true), max(y_true)], 
+             'r--', label='Perfect Prediction')
+    plt.xlabel('Actual Vomitoxin (ppb)')
+    plt.ylabel('Predicted Vomitoxin (ppb)')
+    plt.title(f'{model_name} - Actual vs Predicted')
     plt.legend()
+    plt.grid(True)
     plt.show()
 
 def store_results(model_name, mae, rmse, r2):
