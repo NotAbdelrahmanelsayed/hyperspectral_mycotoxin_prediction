@@ -171,4 +171,4 @@ cython_debug/
 .pypirc
 
 # notes
-./notes.md
+notes.md
