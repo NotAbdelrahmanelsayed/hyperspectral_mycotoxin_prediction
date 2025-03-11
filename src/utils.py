@@ -1,4 +1,15 @@
 import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+def vomitoxin_distribution(df):
+    plt.figure(figsize=(8,6))
+    sns.histplot(df['vomitoxin_ppb'], bins=50)
+    plt.title("Distribution of Vomitoxin_ppb")
+    plt.xlabel("vomitoxin_ppb")
+    plt.ylabel("Frequency")
+    plt.show()
+
 
 def plot_predicted_vs_actual(y_test, y_pred, model_name):
     plt.figure(figsize=(6,6))
@@ -26,4 +37,20 @@ def plot_metrics(results):
     plt.title("Model Performance Comparison")
     plt.legend(title="Metrics")
     plt.grid(axis="y", linestyle="--", alpha=0.7)
+    plt.show()
+
+def plot_pca_analysis(pca):
+    explained_variance = np.cumsum(pca.explained_variance_ratio_)
+    plt.plot(range(1, 11), explained_variance, marker='o', linestyle='--')
+    plt.xlabel("Number of Principal Components")
+    plt.ylabel("Cumulative Explained Variance")
+    plt.title("PCA Analysis")
+    plt.show()
+
+def plot_pca_projection(df_pca, comp_num=1, comp_num_2=2):
+    plt.figure(figsize=(8,6))
+    sns.scatterplot(x=df_pca[f'PC{comp_num}'], y=df_pca[f'PC{comp_num_2}'], hue=df_pca['vomitoxin_ppb'], palette='coolwarm')
+    plt.title("PCA Projection of Spectral Data")
+    plt.xlabel(f"Principal Component {comp_num}")
+    plt.ylabel(f"Principal Component {comp_num_2}")
     plt.show()
