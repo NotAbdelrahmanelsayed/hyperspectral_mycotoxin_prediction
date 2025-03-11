@@ -172,3 +172,6 @@ cython_debug/
 
 # notes
 notes.md
+
+# Ignore src until it's ready
+src/
