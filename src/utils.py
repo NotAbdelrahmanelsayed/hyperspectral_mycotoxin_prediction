@@ -2,11 +2,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 
-def vomitoxin_distribution(df):
+def vomitoxin_distribution(df, target):
     plt.figure(figsize=(8,6))
-    sns.histplot(df['vomitoxin_ppb'], bins=50)
-    plt.title("Distribution of Vomitoxin_ppb")
-    plt.xlabel("vomitoxin_ppb")
+    sns.histplot(df[target], bins=50)
+    plt.title(f"Distribution of {target}")
+    plt.xlabel(f"{target}")
     plt.ylabel("Frequency")
     plt.show()
 
