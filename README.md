@@ -4,7 +4,8 @@
 
 A detailed walkthrough of the project's code, methodology, and findings is available via video:
 
-[Watch Video Explanation](#)
+[![Watch the video](https://img.youtube.com/vi/cUAvcI0lOQo/maxresdefault.jpg)](https://youtu.be/cUAvcI0lOQo)
+
 
 ## Project Overview
 
